@@ -21,6 +21,13 @@ int main(int argc, char *argv[]) {
     }
 
     int **matrix = (int **)malloc(N * sizeof(int *));
+    if (!matrix) {
+        printf("Ошибка выделения памяти для указателей матрицы\n");
+        fclose(file);
+        return 1;
+    }
+
+    int **matrix = (int **)malloc(N * sizeof(int *));
     for (int i = 0; i < N; i++) {
         matrix[i] = (int *)malloc(M * sizeof(int));
     }
