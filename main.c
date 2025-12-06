@@ -32,12 +32,10 @@ int main(int argc, char *argv[]) {
         matrix[i] = (int *)malloc(M * sizeof(int));
     }
 
-    // Чтение матрицы
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             if (fscanf(file, "%d", &matrix[i][j]) != 1) {
                 printf("Ошибка чтения элемента матрицы\n");
-                // Очистка памяти
                 for (int k = 0; k < N; k++) free(matrix[k]);
                 free(matrix);
                 fclose(file);
